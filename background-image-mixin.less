@@ -1,4 +1,4 @@
-.background-image(@image){
+.background-image(@image) {
 	@filename:  ~`/(.*)\.(jpg|jpeg|png|gif)/.exec(@{image})[1]`;
 	@extension: ~`/(.*)\.(jpg|jpeg|png|gif)/.exec(@{image})[2]`;
 	background-image: ~`"url(@{filename}.@{extension})"`;
