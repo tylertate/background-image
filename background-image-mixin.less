@@ -3,7 +3,13 @@
 	@extension: ~`/(.*)\.(jpg|jpeg|png|gif)/.exec(@{image})[2]`;
 	background-image: ~`"url(@{filename}.@{extension})"`;
 
-	@media (-webkit-min-device-pixel-ratio: 2) { 
+	@media
+	only screen and (-webkit-min-device-pixel-ratio: 1.5),
+	only screen and (min--moz-device-pixel-ratio: 1.5),
+	only screen and (-o-min-device-pixel-ratio: 3/2),
+	only screen and (min-device-pixel-ratio: 1.5),
+	only screen and (min-resolution: 144dpi),
+	only screen and (min-resolution: 1.5dppx) {
 		background-image: ~`"url(@{filename}_2x.@{extension})"`;
 		background-size: 100%;
 	}
